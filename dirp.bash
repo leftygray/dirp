@@ -82,7 +82,7 @@ dirp_saveProject() {
 
 	# file name
 	file_name=$DIRP_PROJECTS_DIR/$1
-	command="dirs -v | sed '1d '| cut -d' ' -f4- | sed "s@\~@$HOME@g" | sort -V | uniq | tac > $file_name"
+	command="dirs -v | sed '1d '| cut -b2- | cut -d' ' -f3- | sed "s@\~@$HOME@g" | sort -V | uniq | tac > $file_name"
 
 	if [[ $# -ge 1 ]]; then
 
